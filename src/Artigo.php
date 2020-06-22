@@ -8,6 +8,7 @@ class Artigo
         $this->mysql = $mysql;
     }
 
+    #Adicionar conteúdo
     public function adicionar(string $titulo, string $conteudo): void
     {
         $insereArtigo = $this->mysql->prepare('INSERT INTO artigos (titulo, conteudo) VALUES(?,?);');
@@ -15,6 +16,7 @@ class Artigo
         $insereArtigo->execute();
     }
 
+    #Remover conteúdo
     public function remove(string $id): void
     {
         $removerArtigo = $this->mysql->prepare('DELETE FROM artigos WHERE id = ?');
@@ -22,6 +24,7 @@ class Artigo
         $removerArtigo->execute();
     }
 
+    #Exibir conteúdo
     public function exibirTodos(): array
     {
 
@@ -31,6 +34,7 @@ class Artigo
         return $artigos;
     }
 
+    #Encontrar conteúdo por id
     public function encontrarPorId(string $id): array
     {
         $selecionaArtigo = $this->mysql->prepare("SELECT id, titulo, conteudo FROM artigos WHERE id = ?");

@@ -1,12 +1,13 @@
 <?php
 
+#Os ../ servem para subir um nível na hierarquia de pastas
 require_once "../config.php";
 require_once "../src/Artigo.php";
 require_once "../src/redireciona.php";
 
-#Inserindo dados no banco
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $artigo = new Artigo($mysql);
+    #Inserindo dados no banco
     $artigo->adicionar($_POST['titulo'], $_POST['conteudo']);
 
     #Redirecionar para outra página para não continuar o 
