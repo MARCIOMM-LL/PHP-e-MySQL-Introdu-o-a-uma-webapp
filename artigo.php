@@ -24,8 +24,9 @@ $artigo = $obj_artigo->encontrarPorId($_GET['id']);
             <?php echo $artigo['titulo'] ?>
         </h1>
         <p>
-            <!-- O conteúdo está vindo do banco -->
-            <?php echo $artigo['conteudo'] ?>
+            <!-- O conteúdo está vindo do banco 
+            a função nl2br() gera um novo parágrafo-->
+            <?php echo nl2br($artigo['conteudo']) ?>
         </p>
         <div>
             <a class="botao botao-block" href="index.php">Voltar</a>

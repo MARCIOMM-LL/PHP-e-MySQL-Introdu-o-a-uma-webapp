@@ -11,7 +11,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     redireciona('http://php-mysql-webapp.test/admin/index.php');
 }
     
-
 ?>
 
 <!DOCTYPE html>
